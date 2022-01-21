@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function Header() {
@@ -6,14 +7,17 @@ function Header() {
     <Nav>
       <Logo src="/images/logo.svg" />
       <NavMenu>
-        <a>
+        <Link to="/">
+          {/* <a> */}
           <img src="/images/home-icon.svg" alt="" />
           <span>HOME</span>
-        </a>
-        <a>
+          {/* </a> */}
+        </Link>
+
+        <Link to="/detail">
           <img src="/images/search-icon.svg" alt="" />
           <span>SEARCH</span>
-        </a>
+        </Link>
         <a>
           <img src="/images/watchlist-icon.svg" alt="" />
           <span>WATCHLIST</span>
@@ -31,7 +35,7 @@ function Header() {
           <span>SERIES</span>
         </a>
       </NavMenu>
-      <UserImg src="https://cdn.pixabay.com/photo/2018/08/28/13/29/avatar-3637561_960_720.png" />
+      <UserImg src="https://www.koimoi.com/wp-content/new-galleries/2020/04/avengers-endgame-witness-captain-america-lifting-thors-mjolnir-yet-again-feel-the-goosebumps-with-opening-days-crowd-reaction-001.jpg" />
     </Nav>
   );
 }
@@ -44,6 +48,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 36px;
+  overflow-x: hidden;
 `;
 
 const Logo = styled.img`
@@ -94,6 +99,7 @@ const NavMenu = styled.div`
 const UserImg = styled.img`
   width: 48px;
   height: 48px;
+  margin-top: 15px;
   border-radius: 50%;
   cursor: pointer;
   object-fit: contain;
